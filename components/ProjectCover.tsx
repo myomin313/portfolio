@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Project } from "@/data/portfolio";
-import { cn } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 /** Shows the project screenshot, or a tasteful placeholder when `image` is empty. */
 export default function ProjectCover({
@@ -16,7 +16,7 @@ export default function ProjectCover({
     return (
       <div className={cn("relative overflow-hidden bg-zinc-100 dark:bg-zinc-800", className)}>
         <Image
-          src={project.image}
+          src={withBase(project.image)}
           alt={`Screenshot of ${project.title}`}
           fill
           sizes={sizes}

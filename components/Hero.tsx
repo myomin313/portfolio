@@ -3,6 +3,7 @@ import { ArrowRight, Download, MapPin, Mail } from "lucide-react";
 import Reveal from "./Reveal";
 import SocialLinks from "./SocialLinks";
 import { site, stats } from "@/data/portfolio";
+import { withBase } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -44,7 +45,7 @@ export default function Hero() {
                 View Projects <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href={site.cvUrl}
+                href={withBase(site.cvUrl)}
                 download
                 className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 transition-colors hover:border-accent-500 hover:text-accent-700 dark:border-zinc-700 dark:text-zinc-200 dark:hover:text-accent-400"
               >
@@ -67,7 +68,7 @@ export default function Hero() {
             className="absolute -inset-4 -z-10 rounded-full bg-accent-500/20 blur-3xl"
           />
           <Image
-            src={site.profileImage}
+            src={withBase(site.profileImage)}
             alt={`Portrait of ${site.name}`}
             width={320}
             height={320}

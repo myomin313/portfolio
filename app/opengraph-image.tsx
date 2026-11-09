@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+
+export const dynamic = "force-static";
 import { site } from "@/data/portfolio";
 
 export const alt = `${site.name} — ${site.title}`;
