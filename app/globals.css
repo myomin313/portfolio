@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  --color-accent-50: var(--color-emerald-50);
+  --color-accent-100: var(--color-emerald-100);
+  --color-accent-200: var(--color-emerald-200);
+  --color-accent-300: var(--color-emerald-300);
+  --color-accent-400: var(--color-emerald-400);
+  --color-accent-500: var(--color-emerald-500);
+  --color-accent-600: var(--color-emerald-600);
+  --color-accent-700: var(--color-emerald-700);
+  --color-accent-800: var(--color-emerald-800);
+  --color-accent-900: var(--color-emerald-900);
+  --color-accent-950: var(--color-emerald-950);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-white text-zinc-700 antialiased dark:bg-zinc-950 dark:text-zinc-300;
+}
+
+::selection {
+  @apply bg-accent-500/30;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent-500;
+}
